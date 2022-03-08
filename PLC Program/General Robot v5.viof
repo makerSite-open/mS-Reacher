@@ -10,6 +10,7 @@
   <Subroutine Name="subsubHomeTheta.viofs" iObjectInstances="1" />
   <Subroutine Name="subsubHomeZeta.viofs" iObjectInstances="1" />
   <Subroutine Name="subTool.viofs" iObjectInstances="1" />
+  <Subroutine Name="subDemo.viofs" iObjectInstances="1" />
   <Connections>
     <Connection sKey="vFactoryPage" bRemoteWritable="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="register" />
     <Connection sKey="InI16A1" iPort="0" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I16" dataSource="input" />
@@ -180,6 +181,21 @@
       <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
       <eKeyDestination sAddress="MainState" sIndex="" dtAddress="I32" />
     </coilCopy>
+    <Equal rung="0" row="38" column="8" cellsHeigh="-1" iSortedIndex="15">
+      <eAddress1 sAddress="9" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="MainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <coilSubroutine rung="0" row="38" column="17" cellsHeigh="3" iSortedIndex="16" SubroutineName="subDemo.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="False" />
+      <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="False" />
+      <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="False" />
+    </coilSubroutine>
   </Cells>
   <FlowConnections>
     <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="up" />
@@ -195,9 +211,11 @@
     <FlowConn From="11" Yes="2" dirYesFrom="right" dirYesTo="down" No="12" dirNoFrom="down" dirNoTo="up" />
     <FlowConn From="12" Yes="4" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="up" />
     <FlowConn From="13" Yes="8" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="14" Yes="15" dirYesFrom="right" dirYesTo="left" No="2" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="14" Yes="15" dirYesFrom="right" dirYesTo="left" No="17" dirNoFrom="down" dirNoTo="up" />
     <FlowConn From="15" Yes="16" dirYesFrom="right" dirYesTo="left" />
     <FlowConn From="16" Yes="2" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="17" Yes="18" dirYesFrom="right" dirYesTo="left" No="2" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="18" Yes="2" dirYesFrom="right" dirYesTo="down" />
   </FlowConnections>
   <Wires />
   <Comments />

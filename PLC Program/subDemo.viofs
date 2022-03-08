@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="R" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="T" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="Z" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionR" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionT" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionZ" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedR" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedT" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedZ" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="2">
+    <Input sAddress="PositionR" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionT" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionZ" sIndex="" dtAddress="I32" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilSubroutine rung="0" row="4" column="11" cellsHeigh="7" iSortedIndex="1" SubroutineName="subMoveAbs.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="R" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="T" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="Z" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <coilReturn rung="0" row="6" column="33" cellsHeigh="-1" iSortedIndex="4" />
+    <coilCopy rung="0" row="6" column="19" cellsHeigh="3" iSortedIndex="2" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="R" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="T" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="Z" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilSubroutine rung="0" row="4" column="25" cellsHeigh="7" iSortedIndex="3" SubroutineName="subMoveAbs.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="R" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetR" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="T" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetT" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="Z" sIndex="" dtAddress="I32" />
+      <eSub sAddress="TargetZ" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <coilCopy rung="0" row="5" column="4" cellsHeigh="5" iSortedIndex="0" CopyType="standard">
+      <eKeySource sAddress="9000" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="300" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="2000" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="2000" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="800" sIndex="" dtAddress="I32" />
+      <eKeySource sAddress="6000" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="R" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="T" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="Z" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+    </coilCopy>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="5" dirYesFrom="down" dirYesTo="left" />
+    <FlowConn From="1" Yes="3" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="3" Yes="4" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="4" Yes="2" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="5" Yes="1" dirYesFrom="right" dirYesTo="left" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

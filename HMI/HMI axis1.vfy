@@ -125,5 +125,12 @@
       <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
       <eMax sAddress="1000" sIndex="" dtAddress="I32" bWholeArray="False" />
     </Slider>
+    <Radio height="2" width="5" x="24" y="0">
+      <eRadio sAddress="MainState" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <value sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <label text="Normal" />
+      <value sAddress="9" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <label text="DEMO" />
+    </Radio>
   </Page>
 </VelocioNetworks>
