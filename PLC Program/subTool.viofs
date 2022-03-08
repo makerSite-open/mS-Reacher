@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="toolState" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="myTimer" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="ServoM" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="close" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="register" />
+    <Connection sKey="open" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="2">
+    <Input sAddress="toolState" sIndex="" dtAddress="I32" />
+    <Input sAddress="ServoM" sIndex="" dtAddress="Bit" />
+  </SubroutineInputs>
+  <Cells>
+    <Equal rung="0" row="18" column="4" cellsHeigh="-1" iSortedIndex="3">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="toolState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <flowComment rung="0" row="10" column="12" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="" sText="toolState = 0 Close&#xA;toolState = 1 Open">
+      <bDown value="False" />
+      <bLeft value="False" />
+      <bLeftDown value="False" />
+      <bLeftUp value="False" />
+      <bRight value="False" />
+      <bRightDown value="False" />
+      <bRightUp value="False" />
+      <bUp value="False" />
+    </flowComment>
+    <PWM rung="0" row="14" column="3" cellsHeigh="-1" iSortedIndex="2" myPWMType="SetPeriod" iDevice="0">
+      <ePeriod sAddress="30000" sIndex="" dtAddress="UI16" />
+      <bContinuous value="True" />
+    </PWM>
+    <start rung="0" row="2" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilCopy rung="0" row="6" column="3" cellsHeigh="3" iSortedIndex="0" CopyType="standard">
+      <eKeySource sAddress="28500" sIndex="" dtAddress="UI16" />
+      <eKeySource sAddress="29000" sIndex="" dtAddress="UI16" />
+      <eKeyDestination sAddress="close" sIndex="" dtAddress="UI16" />
+      <eKeyDestination sAddress="open" sIndex="" dtAddress="UI16" />
+    </coilCopy>
+    <coilTimer rung="0" row="10" column="4" cellsHeigh="3" iSortedIndex="1" myType="Timer" myTimerCommand="Start">
+      <eKeyTimer sAddress="myTimer" sIndex="" dtAddress="I32" />
+    </coilTimer>
+    <TimerCompare rung="0" row="18" column="19" cellsHeigh="-1" iSortedIndex="5" timerCompareType="GreaterOrEqual" timeUnit="sec">
+      <eKeyTimerValue sAddress="myTimer" sIndex="" dtAddress="I32" />
+      <eKeyDuration sAddress="1.1" sIndex="" dtAddress="Float" />
+    </TimerCompare>
+    <TimerCompare rung="0" row="24" column="19" cellsHeigh="-1" iSortedIndex="10" timerCompareType="GreaterOrEqual" timeUnit="sec">
+      <eKeyTimerValue sAddress="myTimer" sIndex="" dtAddress="I32" />
+      <eKeyDuration sAddress="1.1" sIndex="" dtAddress="Float" />
+    </TimerCompare>
+    <coilTimer rung="0" row="18" column="24" cellsHeigh="3" iSortedIndex="6" myType="Timer" myTimerCommand="Reset">
+      <eKeyTimer sAddress="myTimer" sIndex="" dtAddress="I32" />
+    </coilTimer>
+    <coilReturn rung="0" row="28" column="27" cellsHeigh="-1" iSortedIndex="7" />
+    <PWM rung="0" row="18" column="13" cellsHeigh="-1" iSortedIndex="4" myPWMType="Start" iDevice="0">
+      <eOutput sAddress="ServoM" sIndex="" dtAddress="Bit" />
+      <eOnTime sAddress="close" sIndex="" dtAddress="UI16" />
+      <bContinuous value="True" />
+    </PWM>
+    <PWM rung="0" row="24" column="13" cellsHeigh="-1" iSortedIndex="9" myPWMType="Start" iDevice="0">
+      <eOutput sAddress="ServoM" sIndex="" dtAddress="Bit" />
+      <eOnTime sAddress="open" sIndex="" dtAddress="UI16" />
+      <bContinuous value="True" />
+    </PWM>
+    <Equal rung="0" row="24" column="4" cellsHeigh="-1" iSortedIndex="8">
+      <eAddress1 sAddress="1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="toolState" sIndex="" dtAddress="I32" />
+    </Equal>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="10" dirYesFrom="right" dirYesTo="left" No="12" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="2" Yes="0" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="3" Yes="4" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="4" Yes="5" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="5" Yes="2" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="6" Yes="8" dirYesFrom="right" dirYesTo="left" No="10" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="7" Yes="8" dirYesFrom="right" dirYesTo="left" No="11" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="10" Yes="6" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="11" Yes="7" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="12" Yes="11" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="up" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

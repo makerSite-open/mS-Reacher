@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="Radius" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="Theta" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="Axis" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="Zeta" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="homeR" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="SR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="homeState" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="homeT" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="ST" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="homeZ" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="SZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="PositionT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="3">
+    <Input sAddress="Axis" sIndex="" dtAddress="I32" />
+    <Input sAddress="SR" sIndex="" dtAddress="Bit" />
+    <Input sAddress="ST" sIndex="" dtAddress="Bit" />
+    <Input sAddress="SZ" sIndex="" dtAddress="Bit" />
+    <Input sAddress="PositionR" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionT" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionZ" sIndex="" dtAddress="I32" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="2" column="3" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilReturn rung="0" row="58" column="26" cellsHeigh="-1" iSortedIndex="11" />
+    <NotEqual rung="0" row="33" column="11" cellsHeigh="-1" iSortedIndex="13">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeR" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <NotEqual rung="0" row="41" column="11" cellsHeigh="-1" iSortedIndex="19">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeT" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <NotEqual rung="0" row="50" column="11" cellsHeigh="-1" iSortedIndex="23">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeZ" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <coilCopy rung="0" row="6" column="2" cellsHeigh="3" iSortedIndex="0" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="homeZ" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilSubroutine rung="0" row="33" column="19" cellsHeigh="3" iSortedIndex="15" SubroutineName="subsubHomeRadius.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posRadiusH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SR" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="SR" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeR" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <NO rung="0" row="33" column="15" cellsHeigh="-1" iSortedIndex="14">
+      <eAddress1 sAddress="SR" sIndex="" dtAddress="Bit" />
+    </NO>
+    <NO rung="0" row="41" column="15" cellsHeigh="-1" iSortedIndex="20">
+      <eAddress1 sAddress="ST" sIndex="" dtAddress="Bit" />
+    </NO>
+    <coilSubroutine rung="0" row="41" column="19" cellsHeigh="3" iSortedIndex="21" SubroutineName="subsubHomeTheta.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posThetaH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="ST" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="ST" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeT" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <coilSubroutine rung="0" row="50" column="19" cellsHeigh="3" iSortedIndex="25" SubroutineName="subsubHomeZeta.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posZetaH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeZ" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SZ" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="SZ" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <NO rung="0" row="50" column="15" cellsHeigh="-1" iSortedIndex="24">
+      <eAddress1 sAddress="SZ" sIndex="" dtAddress="Bit" />
+    </NO>
+    <NotEqual rung="0" row="13" column="11" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeR" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <NO rung="0" row="13" column="15" cellsHeigh="-1" iSortedIndex="3">
+      <eAddress1 sAddress="SR" sIndex="" dtAddress="Bit" />
+    </NO>
+    <coilSubroutine rung="0" row="13" column="19" cellsHeigh="3" iSortedIndex="4" SubroutineName="subsubHomeRadius.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posRadiusH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SR" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="SR" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeR" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <NotEqual rung="0" row="17" column="11" cellsHeigh="-1" iSortedIndex="5">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeT" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <NO rung="0" row="17" column="15" cellsHeigh="-1" iSortedIndex="6">
+      <eAddress1 sAddress="ST" sIndex="" dtAddress="Bit" />
+    </NO>
+    <coilSubroutine rung="0" row="17" column="19" cellsHeigh="3" iSortedIndex="7" SubroutineName="subsubHomeTheta.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posThetaH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="ST" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="ST" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeT" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <NotEqual rung="0" row="21" column="11" cellsHeigh="-1" iSortedIndex="8">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="homeZ" sIndex="" dtAddress="UI8" />
+    </NotEqual>
+    <NO rung="0" row="21" column="15" cellsHeigh="-1" iSortedIndex="9">
+      <eAddress1 sAddress="SZ" sIndex="" dtAddress="Bit" />
+    </NO>
+    <coilSubroutine rung="0" row="21" column="19" cellsHeigh="3" iSortedIndex="10" SubroutineName="subsubHomeZeta.viofs" bIsEmbeddedSub="false">
+      <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eSub sAddress="posZetaH" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="subHomeZ" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="SZ" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="SZ" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <flowComment rung="0" row="7" column="8" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="" sText="Axis:&#xA;0 = All&#xA;1 = Radius&#xA;2 = Theta&#xA;3 = Zeta">
+      <bDown value="False" />
+      <bLeft value="False" />
+      <bLeftDown value="False" />
+      <bLeftUp value="False" />
+      <bRight value="False" />
+      <bRightDown value="False" />
+      <bRightUp value="False" />
+      <bUp value="False" />
+    </flowComment>
+    <wireRouter rung="0" row="46" column="27" cellsHeigh="-1" iSortedIndex="-1" />
+    <wireRouter rung="0" row="55" column="27" cellsHeigh="-1" iSortedIndex="-1" />
+    <wireRouter rung="0" row="26" column="27" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="13" column="6" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="Axis" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="33" column="6" cellsHeigh="-1" iSortedIndex="12">
+      <eAddress1 sAddress="1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="Axis" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="41" column="6" cellsHeigh="-1" iSortedIndex="18">
+      <eAddress1 sAddress="2" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="Axis" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="50" column="6" cellsHeigh="-1" iSortedIndex="22">
+      <eAddress1 sAddress="3" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="Axis" sIndex="" dtAddress="I32" />
+    </Equal>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="5" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="2" Yes="7" dirYesFrom="right" dirYesTo="left" No="22" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="3" Yes="8" dirYesFrom="right" dirYesTo="left" No="22" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="4" Yes="11" dirYesFrom="right" dirYesTo="left" No="23" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="5" Yes="25" dirYesFrom="down" dirYesTo="left" />
+    <FlowConn From="6" Yes="22" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="7" Yes="6" dirYesFrom="right" dirYesTo="left" No="22" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="left" No="22" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="9" Yes="22" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="10" Yes="23" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="11" Yes="10" dirYesFrom="right" dirYesTo="left" No="23" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="12" Yes="13" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="13" Yes="14" dirYesFrom="right" dirYesTo="left" No="15" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="14" Yes="15" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="15" Yes="16" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="16" Yes="17" dirYesFrom="right" dirYesTo="left" No="18" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="17" Yes="18" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="18" Yes="19" dirYesFrom="right" dirYesTo="left" No="24" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="19" Yes="20" dirYesFrom="right" dirYesTo="left" No="24" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="20" Yes="24" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="22" Yes="23" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="23" Yes="1" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="24" Yes="22" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="25" Yes="12" dirYesFrom="right" dirYesTo="left" No="26" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="26" Yes="2" dirYesFrom="right" dirYesTo="left" No="27" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="27" Yes="3" dirYesFrom="right" dirYesTo="left" No="28" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="28" Yes="4" dirYesFrom="right" dirYesTo="left" No="23" dirNoFrom="down" dirNoTo="left" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

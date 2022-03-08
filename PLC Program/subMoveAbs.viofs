@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="TargetR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="TargetT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="TargetZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="SpeedZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="PositionZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="3">
+    <Input sAddress="PositionR" sIndex="" dtAddress="I32" />
+    <Input sAddress="SpeedR" sIndex="" dtAddress="I32" />
+    <Input sAddress="TargetR" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionT" sIndex="" dtAddress="I32" />
+    <Input sAddress="SpeedT" sIndex="" dtAddress="I32" />
+    <Input sAddress="TargetT" sIndex="" dtAddress="I32" />
+    <Input sAddress="PositionZ" sIndex="" dtAddress="I32" />
+    <Input sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+    <Input sAddress="TargetZ" sIndex="" dtAddress="I32" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="3" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <motionOut rung="0" row="17" column="9" cellsHeigh="3" iSortedIndex="0" iDeviceNumber="1" iMotorNumber="1">
+      <bStart value="True" />
+      <eMoveTo sAddress="TargetR" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="SpeedR" sIndex="" dtAddress="I32" />
+      <eSoftStart sAddress="1500" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <motionOut rung="0" row="22" column="9" cellsHeigh="3" iSortedIndex="1" iDeviceNumber="1" iMotorNumber="2">
+      <bStart value="True" />
+      <eMoveTo sAddress="TargetT" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="SpeedT" sIndex="" dtAddress="I32" />
+      <eSoftStart sAddress="1500" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <motionOut rung="0" row="27" column="9" cellsHeigh="3" iSortedIndex="2" iDeviceNumber="1" iMotorNumber="3">
+      <bStart value="True" />
+      <eMoveTo sAddress="TargetZ" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="SpeedZ" sIndex="" dtAddress="I32" />
+      <eSoftStart sAddress="1500" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <Equal rung="0" row="17" column="17" cellsHeigh="-1" iSortedIndex="3">
+      <eAddress1 sAddress="PositionR" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="TargetR" sIndex="" dtAddress="I32" />
+    </Equal>
+    <wireRouter rung="0" row="28" column="15" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="17" column="21" cellsHeigh="-1" iSortedIndex="4">
+      <eAddress1 sAddress="PositionT" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="TargetT" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="17" column="25" cellsHeigh="-1" iSortedIndex="5">
+      <eAddress1 sAddress="PositionZ" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="TargetZ" sIndex="" dtAddress="I32" />
+    </Equal>
+    <coilReturn rung="0" row="21" column="28" cellsHeigh="-1" iSortedIndex="6" />
+    <wireRouter rung="0" row="31" column="16" cellsHeigh="-1" iSortedIndex="-1" />
+    <wireRouter rung="0" row="31" column="7" cellsHeigh="-1" iSortedIndex="-1" />
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="left" />
+    <FlowConn From="1" Yes="2" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="2" Yes="3" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="3" Yes="5" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="4" Yes="6" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="right" />
+    <FlowConn From="5" Yes="4" dirYesFrom="up" dirYesTo="left" />
+    <FlowConn From="6" Yes="7" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="right" />
+    <FlowConn From="7" Yes="8" dirYesFrom="right" dirYesTo="up" No="9" dirNoFrom="down" dirNoTo="right" />
+    <FlowConn From="9" Yes="10" dirYesFrom="left" dirYesTo="right" />
+    <FlowConn From="10" Yes="1" dirYesFrom="up" dirYesTo="left" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>
