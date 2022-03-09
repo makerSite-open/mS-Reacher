@@ -40,7 +40,7 @@
       <bStart value="True" />
       <eMoveTo sAddress="TargetT" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedT" sIndex="" dtAddress="I32" />
-      <eSoftStart sAddress="1500" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="3000" sIndex="" dtAddress="I16" />
       <eStepperLocation sAddress="PositionT" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>

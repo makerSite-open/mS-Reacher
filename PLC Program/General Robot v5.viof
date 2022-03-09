@@ -185,16 +185,22 @@
       <eAddress1 sAddress="9" sIndex="" dtAddress="UI8" />
       <eAddress2 sAddress="MainState" sIndex="" dtAddress="I32" />
     </Equal>
-    <coilSubroutine rung="0" row="38" column="17" cellsHeigh="3" iSortedIndex="16" SubroutineName="subDemo.viofs" bIsEmbeddedSub="false">
+    <coilSubroutine rung="0" row="37" column="17" cellsHeigh="5" iSortedIndex="16" SubroutineName="subDemo.viofs" bIsEmbeddedSub="false">
       <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
-      <bPassByRefOrFromEmbedded value="False" />
+      <bPassByRefOrFromEmbedded value="True" />
       <eLocal sAddress="PositionT" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionT" sIndex="" dtAddress="I32" />
-      <bPassByRefOrFromEmbedded value="False" />
+      <bPassByRefOrFromEmbedded value="True" />
       <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
-      <bPassByRefOrFromEmbedded value="False" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="toolServo" sIndex="" dtAddress="I32" />
+      <eSub sAddress="toolState" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="OutBitE1" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="ServoM" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
   </Cells>
   <FlowConnections>
