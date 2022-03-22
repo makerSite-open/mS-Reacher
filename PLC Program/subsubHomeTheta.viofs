@@ -8,7 +8,6 @@
     <Connection sKey="subHomeT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
     <Connection sKey="ST" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
     <Connection sKey="posThetaH" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
-    <Connection sKey="Ttime" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
   </Connections>
   <Modbus />
   <SubroutineInputs cellsHeigh="2">

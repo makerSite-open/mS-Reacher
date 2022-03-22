@@ -28,7 +28,7 @@
   </SubroutineInputs>
   <Cells>
     <start rung="0" row="3" column="4" cellsHeigh="-1" iSortedIndex="-1" />
-    <motionOut rung="0" row="17" column="9" cellsHeigh="3" iSortedIndex="0" iDeviceNumber="1" iMotorNumber="1">
+    <motionOut rung="0" row="8" column="9" cellsHeigh="3" iSortedIndex="0" iDeviceNumber="1" iMotorNumber="1">
       <bStart value="True" />
       <eMoveTo sAddress="TargetR" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedR" sIndex="" dtAddress="I32" />
@@ -36,7 +36,7 @@
       <eStepperLocation sAddress="PositionR" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <motionOut rung="0" row="22" column="9" cellsHeigh="3" iSortedIndex="1" iDeviceNumber="1" iMotorNumber="2">
+    <motionOut rung="0" row="13" column="9" cellsHeigh="3" iSortedIndex="1" iDeviceNumber="1" iMotorNumber="2">
       <bStart value="True" />
       <eMoveTo sAddress="TargetT" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedT" sIndex="" dtAddress="I32" />
@@ -44,7 +44,7 @@
       <eStepperLocation sAddress="PositionT" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <motionOut rung="0" row="27" column="9" cellsHeigh="3" iSortedIndex="2" iDeviceNumber="1" iMotorNumber="3">
+    <motionOut rung="0" row="18" column="9" cellsHeigh="3" iSortedIndex="2" iDeviceNumber="1" iMotorNumber="3">
       <bStart value="True" />
       <eMoveTo sAddress="TargetZ" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedZ" sIndex="" dtAddress="I32" />
@@ -52,22 +52,22 @@
       <eStepperLocation sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <Equal rung="0" row="17" column="17" cellsHeigh="-1" iSortedIndex="3">
+    <Equal rung="0" row="8" column="17" cellsHeigh="-1" iSortedIndex="3">
       <eAddress1 sAddress="PositionR" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetR" sIndex="" dtAddress="I32" />
     </Equal>
-    <wireRouter rung="0" row="28" column="15" cellsHeigh="-1" iSortedIndex="-1" />
-    <Equal rung="0" row="17" column="21" cellsHeigh="-1" iSortedIndex="4">
+    <wireRouter rung="0" row="19" column="15" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="8" column="21" cellsHeigh="-1" iSortedIndex="4">
       <eAddress1 sAddress="PositionT" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetT" sIndex="" dtAddress="I32" />
     </Equal>
-    <Equal rung="0" row="17" column="25" cellsHeigh="-1" iSortedIndex="5">
+    <Equal rung="0" row="8" column="25" cellsHeigh="-1" iSortedIndex="5">
       <eAddress1 sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetZ" sIndex="" dtAddress="I32" />
     </Equal>
-    <coilReturn rung="0" row="21" column="28" cellsHeigh="-1" iSortedIndex="6" />
-    <wireRouter rung="0" row="31" column="16" cellsHeigh="-1" iSortedIndex="-1" />
-    <wireRouter rung="0" row="31" column="7" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilReturn rung="0" row="12" column="28" cellsHeigh="-1" iSortedIndex="6" />
+    <wireRouter rung="0" row="22" column="16" cellsHeigh="-1" iSortedIndex="-1" />
+    <wireRouter rung="0" row="22" column="7" cellsHeigh="-1" iSortedIndex="-1" />
   </Cells>
   <FlowConnections>
     <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="left" />

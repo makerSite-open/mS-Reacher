@@ -4,16 +4,12 @@
 <VelocioNetworks IPAddress="">
   <Setup ProjectType="FlowChart" />
   <Connections>
-    <Connection sKey="Radius" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
-    <Connection sKey="Theta" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="Axis" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
-    <Connection sKey="Zeta" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
-    <Connection sKey="homeR" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="HomeR" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
     <Connection sKey="SR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
-    <Connection sKey="homeState" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
-    <Connection sKey="homeT" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="HomeT" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
     <Connection sKey="ST" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
-    <Connection sKey="homeZ" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="HomeZ" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
     <Connection sKey="SZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
     <Connection sKey="PositionT" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="PositionR" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
@@ -34,23 +30,23 @@
     <coilReturn rung="0" row="58" column="26" cellsHeigh="-1" iSortedIndex="11" />
     <NotEqual rung="0" row="33" column="11" cellsHeigh="-1" iSortedIndex="13">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeR" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <NotEqual rung="0" row="41" column="11" cellsHeigh="-1" iSortedIndex="19">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeT" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <NotEqual rung="0" row="50" column="11" cellsHeigh="-1" iSortedIndex="23">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeZ" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <coilCopy rung="0" row="6" column="2" cellsHeigh="3" iSortedIndex="0" CopyType="standard">
       <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
       <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
       <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
-      <eKeyDestination sAddress="homeR" sIndex="" dtAddress="UI8" />
-      <eKeyDestination sAddress="homeT" sIndex="" dtAddress="UI8" />
-      <eKeyDestination sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="HomeR" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="HomeT" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="HomeZ" sIndex="" dtAddress="UI8" />
     </coilCopy>
     <coilSubroutine rung="0" row="33" column="19" cellsHeigh="3" iSortedIndex="15" SubroutineName="subsubHomeRadius.viofs" bIsEmbeddedSub="false">
       <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
@@ -59,7 +55,7 @@
       <eLocal sAddress="SR" sIndex="" dtAddress="Bit" />
       <eSub sAddress="SR" sIndex="" dtAddress="Bit" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeR" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeR" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
@@ -76,7 +72,7 @@
       <eLocal sAddress="ST" sIndex="" dtAddress="Bit" />
       <eSub sAddress="ST" sIndex="" dtAddress="Bit" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeT" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeT" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
@@ -84,7 +80,7 @@
       <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <eSub sAddress="posZetaH" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeZ" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeZ" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
       <eLocal sAddress="SZ" sIndex="" dtAddress="Bit" />
@@ -96,7 +92,7 @@
     </NO>
     <NotEqual rung="0" row="13" column="11" cellsHeigh="-1" iSortedIndex="2">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeR" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <NO rung="0" row="13" column="15" cellsHeigh="-1" iSortedIndex="3">
       <eAddress1 sAddress="SR" sIndex="" dtAddress="Bit" />
@@ -108,13 +104,13 @@
       <eLocal sAddress="SR" sIndex="" dtAddress="Bit" />
       <eSub sAddress="SR" sIndex="" dtAddress="Bit" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeR" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeR" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeR" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
     <NotEqual rung="0" row="17" column="11" cellsHeigh="-1" iSortedIndex="5">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeT" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <NO rung="0" row="17" column="15" cellsHeigh="-1" iSortedIndex="6">
       <eAddress1 sAddress="ST" sIndex="" dtAddress="Bit" />
@@ -126,13 +122,13 @@
       <eLocal sAddress="ST" sIndex="" dtAddress="Bit" />
       <eSub sAddress="ST" sIndex="" dtAddress="Bit" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeT" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeT" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeT" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
     <NotEqual rung="0" row="21" column="11" cellsHeigh="-1" iSortedIndex="8">
       <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="HomeZ" sIndex="" dtAddress="UI8" />
     </NotEqual>
     <NO rung="0" row="21" column="15" cellsHeigh="-1" iSortedIndex="9">
       <eAddress1 sAddress="SZ" sIndex="" dtAddress="Bit" />
@@ -141,7 +137,7 @@
       <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <eSub sAddress="posZetaH" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="homeZ" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="HomeZ" sIndex="" dtAddress="UI8" />
       <eSub sAddress="subHomeZ" sIndex="" dtAddress="UI8" />
       <bPassByRefOrFromEmbedded value="True" />
       <eLocal sAddress="SZ" sIndex="" dtAddress="Bit" />
