@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="toolstate" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="hbridge1" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="hbridge2" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="2">
+    <Input sAddress="toolstate" sIndex="" dtAddress="UI8" />
+    <Input sAddress="hbridge1" sIndex="" dtAddress="Bit" />
+    <Input sAddress="hbridge2" sIndex="" dtAddress="Bit" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="6" column="1" cellsHeigh="-1" iSortedIndex="0">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="toolstate" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="11" column="1" cellsHeigh="-1" iSortedIndex="4">
+      <eAddress1 sAddress="1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="toolstate" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilReset rung="0" row="6" column="6" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="hbridge1" sIndex="" dtAddress="Bit" />
+    </coilReset>
+    <coilSet rung="0" row="6" column="10" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="hbridge2" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <coilReset rung="0" row="11" column="6" cellsHeigh="-1" iSortedIndex="5">
+      <eAddress1 sAddress="hbridge2" sIndex="" dtAddress="Bit" />
+    </coilReset>
+    <coilSet rung="0" row="11" column="10" cellsHeigh="-1" iSortedIndex="6">
+      <eAddress1 sAddress="hbridge1" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <coilReturn rung="0" row="22" column="15" cellsHeigh="-1" iSortedIndex="3" />
+    <Equal rung="0" row="17" column="1" cellsHeigh="-1" iSortedIndex="7">
+      <eAddress1 sAddress="2" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="toolstate" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilReset rung="0" row="17" column="6" cellsHeigh="-1" iSortedIndex="8">
+      <eAddress1 sAddress="hbridge1" sIndex="" dtAddress="Bit" />
+    </coilReset>
+    <coilReset rung="0" row="17" column="10" cellsHeigh="-1" iSortedIndex="9">
+      <eAddress1 sAddress="hbridge2" sIndex="" dtAddress="Bit" />
+    </coilReset>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="1" Yes="3" dirYesFrom="right" dirYesTo="left" No="2" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="2" Yes="5" dirYesFrom="right" dirYesTo="left" No="8" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="3" Yes="4" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="4" Yes="7" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="5" Yes="6" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="6" Yes="7" dirYesFrom="right" dirYesTo="up" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="left" No="7" dirNoFrom="down" dirNoTo="left" />
+    <FlowConn From="9" Yes="10" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="10" Yes="7" dirYesFrom="right" dirYesTo="up" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

@@ -4,10 +4,6 @@
 <VelocioNetworks>
   <elementPageTag sAddress="vFactoryPage" sIndex="" dtAddress="UI16" bWholeArray="False" />
   <Page Name="Home">
-    <Button height="1" width="4" x="10" y="3" myButtonType="Button" sRecipe="" sLabel="Home">
-      <eButton sAddress="MainState" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eValue sAddress="1" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </Button>
     <Radio height="4" width="5" x="3" y="3">
       <eRadio sAddress="Axis" sIndex="" dtAddress="I32" bWholeArray="False" />
       <value sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
@@ -23,16 +19,16 @@
       <eButton sAddress="vFactoryPage" sIndex="" dtAddress="UI16" bWholeArray="False" />
       <eValue sAddress="1" sIndex="" dtAddress="UI16" bWholeArray="False" />
     </Button>
+    <Button height="1" width="4" x="10" y="3" myButtonType="Button" sRecipe="" sLabel="Home">
+      <eButton sAddress="mainState" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eValue sAddress="1" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Button>
   </Page>
   <elementPageTag sAddress="vFactoryPage" sIndex="" dtAddress="UI16" bWholeArray="False" />
   <Page Name="MoveAbs">
     <Button height="1" width="4" x="0" y="0" myButtonType="Button" sRecipe="" sLabel="Home">
       <eButton sAddress="vFactoryPage" sIndex="" dtAddress="UI16" bWholeArray="False" />
       <eValue sAddress="0" sIndex="" dtAddress="UI16" bWholeArray="False" />
-    </Button>
-    <Button height="1" width="4" x="18" y="4" myButtonType="Button" sRecipe="" sLabel="Move">
-      <eButton sAddress="MainState" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eValue sAddress="2" sIndex="" dtAddress="I32" bWholeArray="False" />
     </Button>
     <Label height="1" width="4" x="10" y="3" myLableType="Label" sRecipe="" align="left" myColor="black" sText="Radius" />
     <Label height="1" width="4" x="10" y="8" myLableType="Label" sRecipe="" align="left" myColor="black" sText="Theta" />
@@ -46,18 +42,6 @@
     <DisplayNumber height="1" width="4" x="10" y="14" align="left" bDisplayAsTimer="False">
       <eKeyNumber sAddress="PositionZ" sIndex="" dtAddress="I32" bWholeArray="False" />
     </DisplayNumber>
-    <Slider height="1" width="9" x="1" y="7">
-      <eValue sAddress="TargetT" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMax sAddress="2200" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </Slider>
-    <Radio height="2" width="5" x="4" y="17">
-      <eRadio sAddress="toolServo" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <value sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <label text="Close Grip" />
-      <value sAddress="1" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <label text="Open Grip" />
-    </Radio>
     <DisplayNumber height="1" width="4" x="10" y="5" align="left" bDisplayAsTimer="False">
       <eKeyNumber sAddress="TargetR" sIndex="" dtAddress="I32" bWholeArray="False" />
     </DisplayNumber>
@@ -66,13 +50,6 @@
     </DisplayNumber>
     <DisplayNumber height="1" width="4" x="10" y="15" align="left" bDisplayAsTimer="False">
       <eKeyNumber sAddress="TargetZ" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </DisplayNumber>
-    <Button height="1" width="4" x="19" y="17" myButtonType="Button" sRecipe="" sLabel="Grip Tool">
-      <eButton sAddress="MainState" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eValue sAddress="4" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </Button>
-    <DisplayNumber height="1" width="4" x="25" y="18" align="left" bDisplayAsTimer="False">
-      <eKeyNumber sAddress="toolServo" sIndex="" dtAddress="I32" bWholeArray="False" />
     </DisplayNumber>
     <Label height="1" width="4" x="25" y="17" myLableType="Label" sRecipe="" align="left" myColor="black" sText="Tool State" />
     <DisplayNumber height="1" width="4" x="25" y="9" align="left" bDisplayAsTimer="False">
@@ -102,35 +79,58 @@
       <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
       <eMax sAddress="18000" sIndex="" dtAddress="I32" bWholeArray="False" />
     </Slider>
-    <Slider height="1" width="8" x="1" y="4">
-      <eValue sAddress="SpeedR" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMax sAddress="2500" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </Slider>
     <DisplayNumber height="1" width="4" x="1" y="15" align="left" bDisplayAsTimer="False">
       <eKeyNumber sAddress="SpeedZ" sIndex="" dtAddress="I32" bWholeArray="False" />
     </DisplayNumber>
-    <Slider height="1" width="9" x="1" y="12">
-      <eValue sAddress="TargetZ" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMax sAddress="80000" sIndex="" dtAddress="I32" bWholeArray="False" />
-    </Slider>
     <Slider height="1" width="8" x="1" y="14">
       <eValue sAddress="SpeedZ" sIndex="" dtAddress="I32" bWholeArray="False" />
       <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMax sAddress="8000" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMax sAddress="3800" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Slider>
+    <Slider height="1" width="9" x="1" y="12">
+      <eValue sAddress="TargetZ" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMax sAddress="50000" sIndex="" dtAddress="I32" bWholeArray="False" />
     </Slider>
     <Slider height="1" width="8" x="1" y="9">
       <eValue sAddress="SpeedT" sIndex="" dtAddress="I32" bWholeArray="False" />
       <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
-      <eMax sAddress="1000" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMax sAddress="3000" sIndex="" dtAddress="I32" bWholeArray="False" />
     </Slider>
+    <Slider height="1" width="9" x="1" y="7">
+      <eValue sAddress="TargetT" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMax sAddress="4000" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Slider>
+    <Slider height="1" width="8" x="1" y="4">
+      <eValue sAddress="SpeedR" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMin sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eMax sAddress="3500" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Slider>
+    <Button height="1" width="4" x="18" y="4" myButtonType="Button" sRecipe="" sLabel="Move">
+      <eButton sAddress="mainState" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eValue sAddress="2" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Button>
     <Radio height="2" width="5" x="24" y="0">
-      <eRadio sAddress="MainState" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eRadio sAddress="mainState" sIndex="" dtAddress="I32" bWholeArray="False" />
       <value sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
       <label text="Normal" />
       <value sAddress="9" sIndex="" dtAddress="I32" bWholeArray="False" />
       <label text="DEMO" />
     </Radio>
+    <Radio height="2" width="5" x="4" y="17">
+      <eRadio sAddress="toolServo" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <value sAddress="0" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <label text="Close Grip" />
+      <value sAddress="1" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <label text="Open Grip" />
+    </Radio>
+    <Button height="1" width="4" x="19" y="17" myButtonType="Button" sRecipe="" sLabel="Grip Tool">
+      <eButton sAddress="mainState" sIndex="" dtAddress="I32" bWholeArray="False" />
+      <eValue sAddress="4" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </Button>
+    <DisplayNumber height="1" width="4" x="25" y="18" align="center" bDisplayAsTimer="False">
+      <eKeyNumber sAddress="toolServo" sIndex="" dtAddress="I32" bWholeArray="False" />
+    </DisplayNumber>
   </Page>
 </VelocioNetworks>
