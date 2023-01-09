@@ -5,18 +5,12 @@
   <Setup ProjectType="FlowChart" />
   <Subroutine Name="subHome.viofs" iObjectInstances="1" />
   <Subroutine Name="subMoveAbs.viofs" iObjectInstances="1" />
-  <Subroutine Name="subMoveRel.viofs" iObjectInstances="1" />
   <Subroutine Name="subsubHomeRadius.viofs" iObjectInstances="1" />
   <Subroutine Name="subsubHomeTheta.viofs" iObjectInstances="1" />
   <Subroutine Name="subsubHomeZeta.viofs" iObjectInstances="1" />
-  <Subroutine Name="subTool.viofs" iObjectInstances="1" />
   <Subroutine Name="subDemo.viofs" iObjectInstances="1" />
-  <Subroutine Name="subToolHBridge.viofs" iObjectInstances="1" />
   <Connections>
     <Connection sKey="vFactoryPage" bRemoteWritable="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="register" />
-    <Connection sKey="InI16A1" iPort="0" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I16" dataSource="input" />
-    <Connection sKey="InI16A2" iPort="0" iPin="2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I16" dataSource="input" />
-    <Connection sKey="InI16A3" iPort="0" iPin="3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I16" dataSource="input" />
     <Connection sKey="SerialRXA1" bIsSerialRX="True" iPort="0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
     <Connection sKey="SerialTXA1" bISSerialTX="True" iPort="0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
     <Connection sKey="InBitB1" iPort="1" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
@@ -31,10 +25,10 @@
     <Connection sKey="InBitC4" iPort="2" iPin="4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
     <Connection sKey="InBitC5" iPort="2" iPin="5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
     <Connection sKey="InBitC6" iPort="2" iPin="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
-    <Connection sKey="OutBitD1" iPort="3" iPin="1" motorControlPinType="stepperOut2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
-    <Connection sKey="OutBitD2" iPort="3" iPin="2" motorControlPinType="stepperDirection2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
-    <Connection sKey="OutBitD3" iPort="3" iPin="3" motorControlPinType="stepperOut" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
-    <Connection sKey="OutBitD4" iPort="3" iPin="4" motorControlPinType="stepperDirection" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD1" iPort="3" iPin="1" motorControlPinType="stepperOut" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD2" iPort="3" iPin="2" motorControlPinType="stepperDirection" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD3" iPort="3" iPin="3" motorControlPinType="stepperOut2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD4" iPort="3" iPin="4" motorControlPinType="stepperDirection2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
     <Connection sKey="OutBitD5" iPort="3" iPin="5" motorControlPinType="stepperOut3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
     <Connection sKey="OutBitD6" iPort="3" iPin="6" motorControlPinType="stepperDirection3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
     <Connection sKey="OutBitE1" iPort="4" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
@@ -68,7 +62,62 @@
       <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
       <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
     </coilCopy>
-    <coilSubroutine rung="0" row="17" column="17" cellsHeigh="5" iSortedIndex="3" SubroutineName="subHome.viofs" bIsEmbeddedSub="false">
+    <coilCopy rung="0" row="18" column="25" cellsHeigh="3" iSortedIndex="4" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilCopy rung="0" row="28" column="25" cellsHeigh="3" iSortedIndex="9" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilCopy rung="0" row="23" column="25" cellsHeigh="3" iSortedIndex="7" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <Equal rung="0" row="23" column="8" cellsHeigh="-1" iSortedIndex="5">
+      <eAddress1 sAddress="2" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="28" column="8" cellsHeigh="-1" iSortedIndex="8">
+      <eAddress1 sAddress="3" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="18" column="8" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="33" column="8" cellsHeigh="-1" iSortedIndex="10">
+      <eAddress1 sAddress="4" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <coilCopy rung="0" row="33" column="25" cellsHeigh="3" iSortedIndex="12" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <wireRouter rung="0" row="14" column="32" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="14" column="8" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <Equal rung="0" row="39" column="8" cellsHeigh="-1" iSortedIndex="13">
+      <eAddress1 sAddress="5" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
+    </Equal>
+    <flowComment rung="0" row="7" column="8" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="" sText="MainState 0 = No Action&#xA;MainState 1 = Home&#xA;MainState 2 = Move Absolute&#xA;MainState 3 = Reserved for&#xA;Move Relative&#xA;Main State 4 = Reserved for&#xA;tool control">
+      <bDown value="False" />
+      <bLeft value="False" />
+      <bLeftDown value="False" />
+      <bLeftUp value="False" />
+      <bRight value="False" />
+      <bRightDown value="False" />
+      <bRightUp value="False" />
+      <bUp value="False" />
+    </flowComment>
+    <coilCopy rung="0" row="39" column="25" cellsHeigh="3" iSortedIndex="16" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilSubroutine rung="0" row="16" column="17" cellsHeigh="5" iSortedIndex="3" SubroutineName="subHome.viofs" bIsEmbeddedSub="false">
       <eLocal sAddress="Axis" sIndex="" dtAddress="I32" />
       <eSub sAddress="Axis" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="False" />
@@ -91,41 +140,7 @@
       <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
-    <coilCopy rung="0" row="18" column="25" cellsHeigh="3" iSortedIndex="4" CopyType="standard">
-      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
-      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
-    </coilCopy>
-    <flowComment rung="0" row="9" column="8" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="MainState 0 = No Action&#xA;MainState 1 = Home&#xA;MainState 2 = Move Absolute&#xA;MainState 3 = Move Relative&#xA;MainState 4 = Tool PWM&#xD;&#xA;MainState 5 = Tool Hbridge" sText="MainState 0 = No Action&#xA;MainState 1 = Home&#xA;MainState 2 = Move Absolute&#xA;MainState 3 = Move Relative&#xA;MainState 4 = Tool PWM&#xA;MainState 5 = Tool Hbridge">
-      <bDown value="False" />
-      <bLeft value="False" />
-      <bLeftDown value="False" />
-      <bLeftUp value="False" />
-      <bRight value="False" />
-      <bRightDown value="False" />
-      <bRightUp value="False" />
-      <bUp value="False" />
-    </flowComment>
-    <coilCopy rung="0" row="28" column="25" cellsHeigh="3" iSortedIndex="9" CopyType="standard">
-      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
-      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
-    </coilCopy>
-    <coilCopy rung="0" row="23" column="25" cellsHeigh="3" iSortedIndex="7" CopyType="standard">
-      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
-      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
-    </coilCopy>
-    <Equal rung="0" row="23" column="8" cellsHeigh="-1" iSortedIndex="5">
-      <eAddress1 sAddress="2" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <Equal rung="0" row="28" column="8" cellsHeigh="-1" iSortedIndex="8">
-      <eAddress1 sAddress="3" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <Equal rung="0" row="18" column="8" cellsHeigh="-1" iSortedIndex="2">
-      <eAddress1 sAddress="1" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <coilSubroutine rung="0" row="22" column="17" cellsHeigh="7" iSortedIndex="6" SubroutineName="subMoveAbs.viofs" bIsEmbeddedSub="false">
+    <coilSubroutine rung="0" row="21" column="17" cellsHeigh="7" iSortedIndex="6" SubroutineName="subMoveAbs.viofs" bIsEmbeddedSub="false">
       <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
@@ -154,32 +169,7 @@
       <eSub sAddress="TargetZ" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
-    <Equal rung="0" row="33" column="8" cellsHeigh="-1" iSortedIndex="10">
-      <eAddress1 sAddress="4" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <coilSubroutine rung="0" row="33" column="17" cellsHeigh="3" iSortedIndex="11" SubroutineName="subTool.viofs" bIsEmbeddedSub="false">
-      <eLocal sAddress="toolServo" sIndex="" dtAddress="I32" />
-      <eSub sAddress="toolState" sIndex="" dtAddress="I32" />
-      <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="servoMotor" sIndex="" dtAddress="Bit" />
-      <eSub sAddress="servoM" sIndex="" dtAddress="Bit" />
-      <bPassByRefOrFromEmbedded value="False" />
-    </coilSubroutine>
-    <coilCopy rung="0" row="33" column="25" cellsHeigh="3" iSortedIndex="12" CopyType="standard">
-      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
-      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
-    </coilCopy>
-    <wireRouter rung="0" row="14" column="32" cellsHeigh="-1" iSortedIndex="-1" />
-    <Equal rung="0" row="14" column="8" cellsHeigh="-1" iSortedIndex="1">
-      <eAddress1 sAddress="0" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <Equal rung="0" row="46" column="8" cellsHeigh="-1" iSortedIndex="17">
-      <eAddress1 sAddress="9" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <coilSubroutine rung="0" row="45" column="16" cellsHeigh="5" iSortedIndex="18" SubroutineName="subDemo.viofs" bIsEmbeddedSub="false">
+    <coilSubroutine rung="0" row="39" column="15" cellsHeigh="3" iSortedIndex="-1" SubroutineName="subDemo.viofs" bIsEmbeddedSub="false">
       <eLocal sAddress="PositionR" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionR" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
@@ -189,61 +179,26 @@
       <eLocal sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="toolServo" sIndex="" dtAddress="I32" />
-      <eSub sAddress="toolState" sIndex="" dtAddress="I32" />
-      <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="servoMotor" sIndex="" dtAddress="Bit" />
-      <eSub sAddress="servoM" sIndex="" dtAddress="Bit" />
-      <bPassByRefOrFromEmbedded value="False" />
     </coilSubroutine>
-    <Equal rung="0" row="39" column="8" cellsHeigh="-1" iSortedIndex="13">
-      <eAddress1 sAddress="5" sIndex="" dtAddress="UI8" />
-      <eAddress2 sAddress="mainState" sIndex="" dtAddress="I32" />
-    </Equal>
-    <coilSubroutine rung="0" row="39" column="13" cellsHeigh="3" iSortedIndex="14" SubroutineName="subToolHBridge.viofs" bIsEmbeddedSub="false">
-      <eLocal sAddress="toolstate" sIndex="" dtAddress="UI8" />
-      <eSub sAddress="toolstate" sIndex="" dtAddress="UI8" />
-      <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="hbridge1" sIndex="" dtAddress="Bit" />
-      <eSub sAddress="hbridge1" sIndex="" dtAddress="Bit" />
-      <bPassByRefOrFromEmbedded value="True" />
-      <eLocal sAddress="hbridge2" sIndex="" dtAddress="Bit" />
-      <eSub sAddress="hbridge2" sIndex="" dtAddress="Bit" />
-      <bPassByRefOrFromEmbedded value="True" />
-    </coilSubroutine>
-    <coilCopy rung="0" row="39" column="21" cellsHeigh="3" iSortedIndex="15" CopyType="standard">
-      <eKeySource sAddress="hbridge1" sIndex="" dtAddress="Bit" />
-      <eKeySource sAddress="hbridge2" sIndex="" dtAddress="Bit" />
-      <eKeyDestination sAddress="OutBitE1" sIndex="" dtAddress="Bit" />
-      <eKeyDestination sAddress="OutBitE2" sIndex="" dtAddress="Bit" />
-    </coilCopy>
-    <coilCopy rung="0" row="39" column="27" cellsHeigh="3" iSortedIndex="16" CopyType="standard">
-      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
-      <eKeyDestination sAddress="mainState" sIndex="" dtAddress="I32" />
-    </coilCopy>
   </Cells>
   <FlowConnections>
     <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="up" />
-    <FlowConn From="1" Yes="15" dirYesFrom="down" dirYesTo="left" />
-    <FlowConn From="2" Yes="3" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="3" Yes="14" dirYesFrom="right" dirYesTo="down" />
-    <FlowConn From="5" Yes="14" dirYesFrom="right" dirYesTo="down" />
-    <FlowConn From="6" Yes="14" dirYesFrom="right" dirYesTo="down" />
-    <FlowConn From="7" Yes="10" dirYesFrom="right" dirYesTo="left" No="8" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="8" Yes="5" dirYesFrom="right" dirYesTo="left" No="11" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="9" Yes="2" dirYesFrom="right" dirYesTo="left" No="7" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="10" Yes="6" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="11" Yes="12" dirYesFrom="right" dirYesTo="left" No="18" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="12" Yes="13" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="13" Yes="14" dirYesFrom="right" dirYesTo="down" />
-    <FlowConn From="14" Yes="15" dirYesFrom="up" dirYesTo="left" />
-    <FlowConn From="15" Yes="14" dirYesFrom="right" dirYesTo="down" No="9" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="16" Yes="17" dirYesFrom="right" dirYesTo="left" No="14" dirNoFrom="down" dirNoTo="down" />
-    <FlowConn From="17" Yes="14" dirYesFrom="right" dirYesTo="down" />
-    <FlowConn From="18" Yes="19" dirYesFrom="right" dirYesTo="left" No="16" dirNoFrom="down" dirNoTo="up" />
-    <FlowConn From="19" Yes="20" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="20" Yes="21" dirYesFrom="right" dirYesTo="left" />
-    <FlowConn From="21" Yes="14" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="1" Yes="11" dirYesFrom="down" dirYesTo="left" />
+    <FlowConn From="2" Yes="10" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="3" Yes="10" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="4" Yes="10" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="5" Yes="16" dirYesFrom="right" dirYesTo="left" No="6" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="6" Yes="3" dirYesFrom="right" dirYesTo="left" No="8" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="7" Yes="15" dirYesFrom="right" dirYesTo="left" No="5" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="left" No="12" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="9" Yes="10" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="10" Yes="11" dirYesFrom="up" dirYesTo="left" />
+    <FlowConn From="11" Yes="10" dirYesFrom="right" dirYesTo="down" No="7" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="12" Yes="17" dirYesFrom="right" dirYesTo="left" No="10" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="14" Yes="10" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="15" Yes="2" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="16" Yes="4" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="17" Yes="14" dirYesFrom="right" dirYesTo="left" />
   </FlowConnections>
   <Wires />
   <Comments />
