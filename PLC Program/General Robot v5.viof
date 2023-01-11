@@ -180,6 +180,16 @@
       <eSub sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <bPassByRefOrFromEmbedded value="True" />
     </coilSubroutine>
+    <flowComment rung="0" row="8" column="12" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="Use milimeters for Radius and Zeta, and use degrees for Theta.&#xD;&#xA;&#xD;&#xA;Use microstepping 1/8" sText="Use milimeters for Radius and&#xA;Zeta, and use degrees for&#xA;Theta.&#xA;&#xA;Use microstepping 1/8">
+      <bDown value="False" />
+      <bLeft value="False" />
+      <bLeftDown value="False" />
+      <bLeftUp value="False" />
+      <bRight value="False" />
+      <bRightDown value="False" />
+      <bRightUp value="False" />
+      <bUp value="False" />
+    </flowComment>
   </Cells>
   <FlowConnections>
     <FlowConn From="0" Yes="1" dirYesFrom="down" dirYesTo="up" />

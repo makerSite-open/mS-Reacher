@@ -42,7 +42,7 @@
     </NO>
     <motionOut rung="0" row="13" column="13" cellsHeigh="3" iSortedIndex="3" iDeviceNumber="1" iMotorNumber="3">
       <bStart value="True" />
-      <eMoveTo sAddress="-200000" sIndex="" dtAddress="I32" />
+      <eMoveTo sAddress="-500000" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="2500" sIndex="" dtAddress="I16" />
       <eSoftStart sAddress="1500" sIndex="" dtAddress="I16" />
       <eStepperLocation sAddress="posZetaH" sIndex="" dtAddress="I32" />
