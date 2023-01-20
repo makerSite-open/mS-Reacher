@@ -14,24 +14,6 @@
     <Connection sKey="SpeedZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="PositionZ" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="TargetRsteps" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
-    <Connection sKey="VE_TempI32_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_0" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
-    <Connection sKey="VE_TempI32_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
-    <Connection sKey="VE_TempI32_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
-    <Connection sKey="VE_TempI32_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
-    <Connection sKey="VE_TempI32_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
-    <Connection sKey="VE_TempI32_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="temporary" />
-    <Connection sKey="VE_TempFloat_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Float" dataSource="temporary" />
-    <Connection sKey="VE_TempUI16_5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="temporary" />
     <Connection sKey="TargetTsteps" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="TargetZsteps" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
     <Connection sKey="PositionRsteps" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
@@ -52,7 +34,7 @@
   </SubroutineInputs>
   <Cells>
     <start rung="0" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
-    <coilCalc rung="0" row="2" column="5" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="2" column="5" cellsHeigh="3" iSortedIndex="0">
       <eStoreIn sAddress="TargetRsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="TargetR" sIndex="" dtAddress="I32" />
@@ -63,7 +45,7 @@
         <mathElement sAddress="40" sIndex="" dtAddress="UI8" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="2" column="12" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="2" column="12" cellsHeigh="3" iSortedIndex="1">
       <eStoreIn sAddress="TargetTsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="TargetT" sIndex="" dtAddress="I32" />
@@ -78,7 +60,7 @@
         <mathElement sAddress="2.47" sIndex="" dtAddress="Float" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="2" column="19" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="2" column="19" cellsHeigh="3" iSortedIndex="2">
       <eStoreIn sAddress="TargetZsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="TargetZ" sIndex="" dtAddress="I32" />
@@ -89,7 +71,7 @@
         <mathElement sAddress="11200" sIndex="" dtAddress="I16" />
       </Equation>
     </coilCalc>
-    <flowComment rung="0" row="1" column="27" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="Tergets and current positions are converted from mm to steps on each motor" sText="Tergets and current positions&#xA;are converted from mm to&#xA;steps on each motor">
+    <flowComment rung="0" row="1" column="27" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="" sText="Tergets and current positions&#xA;are converted from mm to&#xA;steps on each motor">
       <bDown value="False" />
       <bLeft value="False" />
       <bLeftDown value="False" />
@@ -101,7 +83,7 @@
     </flowComment>
     <wireRouter rung="0" row="24" column="7" cellsHeigh="-1" iSortedIndex="-1" />
     <wireRouter rung="0" row="24" column="16" cellsHeigh="-1" iSortedIndex="-1" />
-    <motionOut rung="0" row="21" column="9" cellsHeigh="3" iSortedIndex="2" iDeviceNumber="1" iMotorNumber="3">
+    <motionOut rung="0" row="21" column="9" cellsHeigh="3" iSortedIndex="8" iDeviceNumber="1" iMotorNumber="3">
       <bStart value="True" />
       <eMoveTo sAddress="TargetZsteps" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedZ" sIndex="" dtAddress="I32" />
@@ -109,7 +91,7 @@
       <eStepperLocation sAddress="PositionZsteps" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <motionOut rung="0" row="17" column="9" cellsHeigh="3" iSortedIndex="1" iDeviceNumber="1" iMotorNumber="2">
+    <motionOut rung="0" row="17" column="9" cellsHeigh="3" iSortedIndex="7" iDeviceNumber="1" iMotorNumber="2">
       <bStart value="True" />
       <eMoveTo sAddress="TargetTsteps" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedT" sIndex="" dtAddress="I32" />
@@ -117,7 +99,7 @@
       <eStepperLocation sAddress="PositionTsteps" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <motionOut rung="0" row="13" column="9" cellsHeigh="3" iSortedIndex="0" iDeviceNumber="1" iMotorNumber="1">
+    <motionOut rung="0" row="13" column="9" cellsHeigh="3" iSortedIndex="6" iDeviceNumber="1" iMotorNumber="1">
       <bStart value="True" />
       <eMoveTo sAddress="TargetRsteps" sIndex="" dtAddress="I32" />
       <eAcceleration sAddress="SpeedR" sIndex="" dtAddress="I32" />
@@ -125,19 +107,19 @@
       <eStepperLocation sAddress="PositionRsteps" sIndex="" dtAddress="I32" />
       <bStoreLocationOfTransition value="False" />
     </motionOut>
-    <Equal rung="0" row="20" column="16" cellsHeigh="-1" iSortedIndex="3">
+    <Equal rung="0" row="20" column="16" cellsHeigh="-1" iSortedIndex="9">
       <eAddress1 sAddress="PositionRsteps" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetRsteps" sIndex="" dtAddress="I32" />
     </Equal>
-    <Equal rung="0" row="20" column="20" cellsHeigh="-1" iSortedIndex="4">
+    <Equal rung="0" row="20" column="20" cellsHeigh="-1" iSortedIndex="10">
       <eAddress1 sAddress="PositionTsteps" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetTsteps" sIndex="" dtAddress="I32" />
     </Equal>
-    <Equal rung="0" row="20" column="24" cellsHeigh="-1" iSortedIndex="5">
+    <Equal rung="0" row="20" column="24" cellsHeigh="-1" iSortedIndex="11">
       <eAddress1 sAddress="PositionZsteps" sIndex="" dtAddress="I32" />
       <eAddress2 sAddress="TargetZsteps" sIndex="" dtAddress="I32" />
     </Equal>
-    <coilCalc rung="0" row="7" column="5" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="7" column="5" cellsHeigh="3" iSortedIndex="3">
       <eStoreIn sAddress="PositionRsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionR" sIndex="" dtAddress="I32" />
@@ -148,7 +130,7 @@
         <mathElement sAddress="40" sIndex="" dtAddress="UI8" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="7" column="12" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="7" column="12" cellsHeigh="3" iSortedIndex="4">
       <eStoreIn sAddress="PositionTsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionT" sIndex="" dtAddress="I32" />
@@ -163,7 +145,7 @@
         <mathElement sAddress="2.47" sIndex="" dtAddress="Float" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="7" column="19" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="7" column="19" cellsHeigh="3" iSortedIndex="5">
       <eStoreIn sAddress="PositionZsteps" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionZ" sIndex="" dtAddress="I32" />
@@ -174,7 +156,7 @@
         <mathElement sAddress="11200" sIndex="" dtAddress="I16" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="28" column="5" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="28" column="5" cellsHeigh="3" iSortedIndex="12">
       <eStoreIn sAddress="PositionR" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionRsteps" sIndex="" dtAddress="I32" />
@@ -184,7 +166,7 @@
         <mathElement sAddress="40" sIndex="" dtAddress="UI8" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="28" column="12" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="28" column="12" cellsHeigh="3" iSortedIndex="13">
       <eStoreIn sAddress="PositionT" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionTsteps" sIndex="" dtAddress="I32" />
@@ -198,7 +180,7 @@
         <mathElement sAddress="2.47" sIndex="" dtAddress="Float" />
       </Equation>
     </coilCalc>
-    <coilCalc rung="0" row="28" column="19" cellsHeigh="3" iSortedIndex="-1">
+    <coilCalc rung="0" row="28" column="19" cellsHeigh="3" iSortedIndex="14">
       <eStoreIn sAddress="PositionZ" sIndex="" dtAddress="I32" />
       <Equation>
         <mathElement sAddress="PositionZsteps" sIndex="" dtAddress="I32" />
@@ -208,9 +190,9 @@
         <mathElement sAddress="11200" sIndex="" dtAddress="I16" />
       </Equation>
     </coilCalc>
-    <coilReturn rung="0" row="28" column="27" cellsHeigh="-1" iSortedIndex="6" />
+    <coilReturn rung="0" row="28" column="27" cellsHeigh="-1" iSortedIndex="15" />
     <wireRouter rung="0" row="26" column="26" cellsHeigh="-1" iSortedIndex="-1" />
-    <flowComment rung="0" row="32" column="13" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="Convert steps back to mm for main program" sText="Convert steps back to mm for&#xA;main program">
+    <flowComment rung="0" row="32" column="13" cellsHeigh="-1" iSortedIndex="-1" sTextUnformatted="" sText="Convert steps back to mm for&#xA;main program">
       <bDown value="False" />
       <bLeft value="False" />
       <bLeftDown value="False" />
